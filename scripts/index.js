@@ -1,4 +1,4 @@
-//import projects from project files
+
 let frontend = true;
 let backend = true;
 let recent = true;
@@ -38,7 +38,9 @@ function toggleRecent(){
 }
 
 function toggle(buttonType){
-    console.log(buttonType,"clicked");
+
+    
+
     switch (buttonType){
         case "front":
             frontend = !frontend;
@@ -66,7 +68,7 @@ function addProjectToPage(json){
     const desiredNumberOfColumns = 3;
     let rowNumber = 0;
     const rowContainer = document.getElementById("rowContainer");
-    console.log("rowContainer === undefined",rowContainer === undefined);
+    // console.log("rowContainer === undefined",rowContainer === undefined);
     let currentRow;
     let total = 0;
     //This is more complicated that it appears because of 2 driving factors.
@@ -74,8 +76,9 @@ function addProjectToPage(json){
     //The second is the case of filtering. If we don't use all elements in our json, things can get a little tricky.
     //we solve this by increasing the loop length, and having a seperate variable for the total items displayed
     //on the screeen
+    let rowHTML = ""
     for (let i = 0;i<json.length + desiredNumberOfColumns;i++){
-        console.log("i", i);
+        // console.log("i", i);
 
         if ((((total + 1) % desiredNumberOfColumns) - 1 == 0) || (i === json.length + desiredNumberOfColumns -1)){ //the 
             if (total != 0){ //on the first one we'll not have information
@@ -91,10 +94,10 @@ function addProjectToPage(json){
         }
         if (filter(json[i])){
             rowHTML = rowHTML + createProjectCard(json[i],i);
-            console.log("adding")
+            // console.log("adding")
             total++
         } else {
-            console.log("skipping")
+            // console.log("skipping")
         }
         
     }
