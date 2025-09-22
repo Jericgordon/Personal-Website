@@ -1,6 +1,6 @@
 # README
 ## Author : Jen Gordon
-## Class link :
+## Class link : https://jericgordon.github.io/Personal-Website/index.html
 ## Project Objective
 This project has two main goals. The first is to showcase my experience as an engineer. But secondly, I've always struggled how to showcase my experience as a hiker as relevant to a career. In 2022 I hiked 2193.7 miles on the Appalachian trail. It's maybe the longest time I've spent without a laptop, and relied on my phone entirely for communication, directions, and company for many parts. I throughly tested the offline capacity of apps, as well as seeing the effect that internet has on battery life.
  
