@@ -1,0 +1,26 @@
+#ATmap,#ATmapLine {
+  position: absolute;
+  bottom: 200px;
+  right: 10%;
+  width: 500px;
+    
+}
+
+.brand-name {
+    color: black;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+
+.card-image {
+  height: auto;
+  width: 100%;
+}
+
+
+
+.standard-card-styling {
+  width: 75%;
+  margin: 2em;
+}

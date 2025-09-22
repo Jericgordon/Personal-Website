@@ -1,0 +1,40 @@
+.brand-name {
+    color: black;
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+.navigation-item {
+    padding-left: .5em;
+    padding-right: .25em;
+}
+
+h1 {
+    text-align: center;
+}
+
+.card-body-styling {
+    background-color: grey;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    width: 18rem;
+}
+
+.card-general-styling{
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    margin: 2em;
+    box-shadow: 8px 4px 4px grey; 
+    
+}
+
+
+.card-title-styling {
+    text-align: center;
+}
+
+.card-text-styling {
+    text-align: justify;
+}
+
+

@@ -1,0 +1,41 @@
+[
+    {
+        "project_id": 1,
+        "project_name": "Tidepool",
+        "project_skinny_description":"An android application developed to facilitate mutual aid",
+        "project_database":"Firebase, currently migrating to Postgress",
+        "project_frontend":"Java, compiled with android studio",
+        "project_tidbit":"I knew that I probably wasn't going to stay with Firebase with this project for a long time. The initial choice of Firebase was just because it was well supported in android, and the class I was building this for requested it. This presented a challange - How do you develop when you know you're going to be changing out a major componant. I worked really hard to make the entire front-end backend agnostic. This really served me well for testing as well, as it let me really easily display fake data on the pages for testing purposes",
+        "project_picture":"./images/android_logo.jpg",
+        "project_picture_alt":"An image of the android logo",
+        "project_has_frontend":true,
+        "project_recent":true,
+        "project_has_backend":true
+    },
+        {
+        "project_id": 2,
+        "project_name": "Interactive Appalachian Trail Map",
+        "project_skinny_description":"A webpage designed to share my trip of the Appalachian Trail",
+        "project_database":"None",
+        "project_frontend":"HTML/CSS/JAVA",
+        "project_tidbit":"It's been a struggle to figure out how to communicate how my Trail expereinces shaped me. I'm excited to have somethingto share",
+        "project_picture":"./images/ATthumbnail.png",
+        "project_picture_alt":"A picture of a map",
+        "project_has_frontend":true,
+        "project_recent":true,
+        "project_has_backend":false
+    },
+    {
+    "project_id" :3,
+    "project_name": "Hanabi Simulation",
+    "project_skinny_description":"Conducted Novel research on probabilities and optimal strategy in Hanabi",
+    "project_database":"None",
+    "project_frontend":"Terminal",
+    "project_tidbit":"We established a ceiling for the score that you could get in Hanabi! Also, to better debug, I found a way to print in Color in the Terminal",
+    "project_picture":"./images/Hanabi_card_game_materials.jpg",
+    "project_picture_alt":"A picture of a map",
+    "project_has_frontend":false,
+    "project_recent":false,
+    "project_has_backend":true
+}
+]
