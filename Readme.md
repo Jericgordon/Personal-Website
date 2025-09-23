@@ -6,12 +6,14 @@ This project has two main goals. The first is to showcase my experience as an en
  
 And it very much shaped me as a person. My goal for this project is to communicate both of these things, and share them.
 ## Screenshot :
+(Here you should be using images what it looks like is that you may have used this as it was in your computer saying location wise)
 ./images/Screenshot1.png
 ./images/Screenshot2.png
 
 
 
 ## Instructions to build
+(Here you should be including instructions on if say a perosn wanted to see or have your project build in there local machine, so more or less it should be having build commands or something similar to that)
 Building this website is quite standard; simply upload to github, and follow the standard instructions for launching a page with basic HTML/CSS
 
 ## Use of AI :
@@ -21,6 +23,7 @@ AI was also used to generate the body of the contact page, per the assignment
 
 
 ### logs
+(yes these are links images should have been this way)
 https://chatgpt.com/share/68d1cf33-2d44-8010-9392-48c7719b9922
 https://chatgpt.com/share/68d1cf49-b394-8010-8605-7c7088202614
 
