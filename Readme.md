@@ -6,6 +6,11 @@ This project has two main goals. The first is to showcase my experience as an en
  
 And it very much shaped me as a person. My goal for this project is to communicate both of these things, and share them.
 ## Screenshot :
+./images/Screenshot1.png
+./images/Screenshot2.png
+
+
+
 ## Instructions to build
 Building this website is quite standard; simply upload to github, and follow the standard instructions for launching a page with basic HTML/CSS
 
