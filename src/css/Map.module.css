@@ -1,0 +1,56 @@
+.map {
+  position: relative;
+}
+
+.map-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 75%;
+  z-index: auto;
+  height: auto;
+}
+
+.svg-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 75%;
+  height: auto;
+}
+
+.map-path {
+  z-index: 1;
+}
+
+#root {
+  margin: 0px;
+  padding: 0px;
+  min-height: 5083px;
+  width: 100vw;
+}
+
+.map .photos {
+  position: absolute;
+  z-index: 1;
+  height: 200px;
+  width: auto;
+  border: 2px solid grey;
+}
+
+svg .Dot {
+  r: 4.5;
+  fill: red;
+  color: "red";
+  transform: translate(-36px, -20px);
+  z-index: 2;
+  transition: r 0.2s ease;
+}
+
+svg .Dot:hover {
+  r: 6;
+}
+
+.map svg foreignObject {
+  overflow: visible;
+}

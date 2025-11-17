@@ -4,6 +4,7 @@ import map from "../resources/APPA_Map-1.png";
 import mappify from "../modules/mappify";
 import MapImageDot from "./MapImageDot";
 import { useRef, useEffect, useState } from "react";
+import css from "../css/Map.modules.css"
 
 export default function Map({
   url,
@@ -57,10 +58,9 @@ export default function Map({
   const scale = 0.908;
   return (
     //709.549 3355.049"
-    <div className="map">
-      <img ref={mapImg} src={map}></img>
-      <svg viewBox={`0 0 ${700.549 * scale} ${3652.86 * scale}`}>
-        {/* <MapImageDot ID={1} X={200} Y={20} onClick={()=>{}}/> */}
+    <div style={css.map}>
+      <img ref={mapImg} style={css.map-background} src={map}></img>
+      <svg style={css.svg-container} viewBox={`0 0 ${700.549 * scale} ${3652.86 * scale}`}>
         {mapDots.map((dot) => (
           <MapImageDot
             openID={openPic}
@@ -73,6 +73,7 @@ export default function Map({
           />
         ))}
         <path
+          style={css.map-path}
           ref={trail}
           transform="translate(-36,-20)"
           stroke="green"
