@@ -20,7 +20,6 @@ export default function Map({
 
   //convert the data in the JSON to real things on the page
   const processJson = (json) => {
-    // console.log(json);
     const convertertedCooodinates = json.map((data) => {
       const onMap = {};
       const length = trail.current.getTotalLength();
@@ -34,9 +33,7 @@ export default function Map({
       onMap.percent = data.percent;
       return onMap;
     });
-    // console.log(convertertedCooodinates);
     setMapDots(convertertedCooodinates);
-    //console.log(json.staticTestCoodinates)
   };
   //getAPIitems from URL
   useEffect(() => {
