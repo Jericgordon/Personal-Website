@@ -1,0 +1,29 @@
+.map {
+  position: relative;
+  margin: 0px;
+  padding: 0px;
+  min-height: 5083px;
+  width: 100vw;
+}
+
+.map-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 75%;
+  z-index: auto;
+  height: auto;
+}
+
+.svg-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 75%;
+  height: auto;
+}
+
+/* This is the invisible line we place dots on */
+.map-path {
+  z-index: 1;
+}
