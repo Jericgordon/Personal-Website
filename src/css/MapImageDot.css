@@ -9,7 +9,7 @@
 
 .Dot {
   position: absolute;
-  fill: red;
+  fill: green;
   border: 1px solid black;
   transform: translate(-36px, -20px);
   z-index: 4;
@@ -18,11 +18,11 @@
 }
 
 circle {
-    r:3px;
+    r:4px;
 }
 
 circle:hover {
-    r: 5px;
+    r: 6px;
 }
 
 foreignObject {
