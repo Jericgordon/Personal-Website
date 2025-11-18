@@ -7,12 +7,9 @@ import { useRef, useEffect, useState } from "react";
 import "../css/Map.css"
 
 export default function Map({
-  url,
-  openPic,
-  setOpenPic,
-  setCurrentPercent,
+  data,
 }) {
-  //const [openPic,setOpenPic] = useState(() => -1)
+  const [openPic,setOpenPic] = useState(() => -1)
   const [mapDots, setMapDots] = useState([]);
   const mapImg = useRef(null);
   const trail = useRef(null);
@@ -26,9 +23,9 @@ export default function Map({
       const point = trail.current.getPointAtLength(
         length * (data.percent / 100)
       );
+
       onMap.X = point.x;
       onMap.Y = point.y;
-      onMap.ID = data._id;
       onMap.url = data.url;
       onMap.percent = data.percent;
       return onMap;
@@ -37,19 +34,16 @@ export default function Map({
   };
   //getAPIitems from URL
   useEffect(() => {
-    fetch(url)
-      .then((r) => r.json())
-      .then((data) => processJson(data));
-  }, [url]);
+    processJson(data)
+  }, [data]);
 
-  function onClickHandlerDots(ID, percent) {
-    if (openPic === ID) {
+  function onClickHandlerDots(url) {
+    if (openPic === url) {
       setOpenPic(-1); //no pic is showing
-      setCurrentPercent(-1);
     } else {
-      setOpenPic(ID);
-      setCurrentPercent(percent);
+      setOpenPic(url);
     }
+    console.log(openPic);
   }
 
   const scale = 0.908;
@@ -61,12 +55,11 @@ export default function Map({
         {mapDots.map((dot) => (
           <MapImageDot
             openID={openPic}
-            myID={dot.ID}
-            key={dot.ID}
+            key={dot.url}
             X={dot.X}
             Y={dot.Y}
             url={dot.url}
-            onClick={() => onClickHandlerDots(dot.ID, dot.percent)}
+            onClick={() => onClickHandlerDots(dot.url)}
           />
         ))}
         <path

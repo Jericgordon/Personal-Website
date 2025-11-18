@@ -1,24 +1,35 @@
-.expanded-photos-from-dot {
+.photos {
   position: absolute;
-  z-index: 1;
+  z-index: 3;
   height: 200px;
-  width: auto;
+  width: min-content;
   border: 2px solid grey;
+  object-fit: contain;
 }
 
-svg .Dot {
-  r: 4.5;
+.Dot {
+  position: absolute;
   fill: red;
-  color: "red";
+  border: 1px solid black;
   transform: translate(-36px, -20px);
-  z-index: 2;
+  z-index: 4;
   transition: r 0.2s ease;
+  r:3;
 }
 
-svg .Dot:hover {
-  r: 6;
+circle {
+    r:3px;
 }
 
-.map svg foreignObject {
+circle:hover {
+    r: 5px;
+}
+
+foreignObject {
   overflow: visible;
+  display: inline-flex;
+  width: 1px;
+  height: 1px;
+  z-index: 3;
+  border: 2px solid grey;
 }

@@ -17,6 +17,7 @@
 
 .svg-container {
   position: absolute;
+  overflow: visible;
   top: 0;
   left: 0;
   width: 75%;
@@ -27,3 +28,4 @@
 .map-path {
   z-index: 1;
 }
+

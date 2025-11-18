@@ -12,15 +12,17 @@ class image_to_json():
     """
     takes the import data from a folder and exports the metadata as a JSON.
     """
-    def __init__(self,import_path,export_path):
+    def __init__(self,import_path,export_path,final_location_of_photos):
         """
         Arguments:
             import_path : the path to the folder (either relative or absolute) to take the files from
             export_path : the place to put a JSON file named "Export.py" with the metadata
+            final_location_of_photos : final source to add photos
         
         """
         self.import_path = import_path
         self.except_path = export_path
+        self.final_location_of_photos = final_location_of_photos
         self.mappify_at = mappify_AT()
 
     def _get_list_of_photos(self) -> list:
@@ -92,13 +94,17 @@ class image_to_json():
         """
         data = []
         for file_name in self._get_list_of_photos():
-            this_photo = {}
-            location = self._get_lat_lon_from_photo(self.import_path + '/' + file_name)
-            this_photo["lat"] = location[0]
-            this_photo["lot"] = location[1]
-            this_photo["percent"] = self.mappify_at.calculatePercentage(location[0],location[1])
-            this_photo["url"] = self.import_path + '/' + file_name
-            data.append(this_photo)
+            try:
+                this_photo = {}
+                location = self._get_lat_lon_from_photo(self.import_path + '/' + file_name)
+                this_photo["lat"] = location[0]
+                this_photo["lot"] = location[1]
+                this_photo["percent"] = self.mappify_at.calculatePercentage(location[0],location[1]) * 100
+                this_photo["url"] = self.final_location_of_photos + '/' + file_name
+                data.append(this_photo)
+            except(TypeError, KeyError):
+                print(f"Photo {file_name} does not have metadata")
+                continue
         self._save_as_JSON(data)
 
     def _save_as_JSON(self,dict_data):

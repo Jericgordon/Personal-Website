@@ -26,13 +26,13 @@ class image_resizer():
         """
         for file_name in get_filenames_in_folder(self.source_dir):
             if (self.max_hight == None):
-                self._resize_by_width(self.source_dir + '/' + file_name)
+                self._resize_by_width(self.source_dir + '/' + file_name,file_name)
             else: 
-                self._resize_by_hight(self.source_dir + '/' + file_name)
+                self._resize_by_hight(self.source_dir + '/' + file_name,file_name)
 
         
 
-    def _resize_by_width(self,source):
+    def _resize_by_width(self,source,file_name):
         """
         resizes photo to be the same ratio, with at max the width set in the beginning
 
@@ -47,7 +47,7 @@ class image_resizer():
         self.image_id += 1
 
 
-    def _resize_by_hight(self,source):
+    def _resize_by_hight(self,source,file_name):
         """
         resizes photo to be the same ratio, with at max the hight set in the beginning
 
@@ -58,5 +58,5 @@ class image_resizer():
         hight_percent = (self.max_hight / float(img.size[1]))
         new_width = int(float(img.size[0]) * float(hight_percent))
         resized_img = img.resize((new_width,self.max_hight), Image.ANTIALIAS)
-        resized_img.save(self.target_dir + '/' + str(self.image_id) + ".jpg")
+        resized_img.save(self.target_dir + '/' + file_name)
         self.image_id += 1
