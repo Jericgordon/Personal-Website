@@ -100,7 +100,7 @@ class image_to_json():
                 this_photo["lat"] = location[0]
                 this_photo["lot"] = location[1]
                 this_photo["percent"] = self.mappify_at.calculatePercentage(location[0],location[1]) * 100
-                this_photo["url"] = self.final_location_of_photos + '/' + file_name
+                this_photo["url"] = "http://jericgordon.github.io/Personal-Website/resized" + '/' + file_name
                 data.append(this_photo)
             except(TypeError, KeyError):
                 print(f"Photo {file_name} does not have metadata")
