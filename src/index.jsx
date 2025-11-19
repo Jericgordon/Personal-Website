@@ -1,6 +1,6 @@
 import React from 'react';
 import { StrictMode} from 'react'; //TODO remove for prod
-import { BrowserRouter, Routes, Route } from 'react-router';
+import { HashRouter, Routes, Route } from 'react-router';
 import ReactDOM from 'react-dom/client';
 // import { Toaster } from "react-hot-toast";
 /* Specific page imports*/
@@ -11,7 +11,7 @@ import Projects from './pages/Projects.jsx';
 
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <BrowserRouter>
+  <HashRouter>
     <StrictMode>
       {/* <Toaster position="top-right" /> */}
       <Routes>
@@ -20,5 +20,5 @@ ReactDOM.createRoot(document.getElementById("root")).render(
         <Route path="/projects" element={<Projects />} />
       </Routes>
     </StrictMode>
-  </BrowserRouter>
+  </HashRouter>
 );
