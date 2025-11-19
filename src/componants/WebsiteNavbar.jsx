@@ -8,11 +8,12 @@ export default function WebsiteNavbar() {
     return (
       <Navbar collapseOnSelect expand="sm" className="bg-body-tertiary">
         <Container>
-          <Navbar.Brand href="#home">Jen Gordon</Navbar.Brand>
+          <Navbar.Brand href="/">Jen Gordon</Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="me-auto">
               <Nav.Link href="/AT">Appalachian Trail</Nav.Link>
+              <Nav.Link href="/projects">Projects</Nav.Link>
               <NavDropdown title="Posts" id="collapsible-nav-dropdown">
                 <NavDropdown.Item href="">TidePool</NavDropdown.Item>
               </NavDropdown>

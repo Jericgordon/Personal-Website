@@ -6,6 +6,7 @@ import ReactDOM from 'react-dom/client';
 /* Specific page imports*/
 import ATPage from "./pages/AppalachianTrailPage.jsx"
 import HomePage from "./pages/HomePage.jsx";
+import Projects from './pages/Projects.jsx';
 
 
 
@@ -16,6 +17,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/AT" element={<ATPage />} />
+        <Route path="/projects" element={<Projects />} />
       </Routes>
     </StrictMode>
   </BrowserRouter>
