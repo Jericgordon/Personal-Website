@@ -1,0 +1,58 @@
+.card-style {
+    margin: 1rem;
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    max-width: 25rem;
+    min-width: 19rem;
+    min-height: 7rem;
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.card-style:hover {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.card-description {
+    font-size: small;
+    margin-bottom: 1rem;
+}
+
+.card-style h3 {
+    font-size: medium;
+    float: left;
+}
+
+.card-style img {
+    float:right;
+    margin: 2px;
+}
+
+
+.card-description {
+    clear: both;
+}
+
+.github-button {
+    background-color: black;
+    border-color: black;
+    border-radius: 2px;
+    margin-right: .5rem;
+    height: 28px;
+}
+
+.view-button {
+    height: 28px;
+    background-color: #70161E !important;
+    border-color: #70161E !important;
+    color: #70161E;
+}
+
+.view-button img{
+    margin-right: 0;
+    padding-right: 0;
+}
+
+
