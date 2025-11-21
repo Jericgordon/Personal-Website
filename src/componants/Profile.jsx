@@ -11,7 +11,7 @@ export default function Profile (){
                 <div className="about-me-card">
                     <p>{"Jen Gordon,"}</p>
                     <p>Software Engineer</p>
-                    <p>MCS Dec. 2026</p>
+                    <p>MCS Dec. 2025</p>
                 </div>
             </div>
         </div>

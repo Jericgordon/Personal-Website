@@ -1,18 +1,19 @@
 .featured-projects-container {
     background-color: #1C3144;
     color: white;
-    display: block;
     transform: rotate(-3deg) scale(125%);
 }
 
+
 .subtitle {
-    padding-top: 2rem;
+    padding-top: 1rem;
+    margin-bottom: 0;
     text-align: center;
     transform: rotate(3deg) scale(75%);
 }
 
 .featured-projects {
-    transform: rotate(3deg) scale(75%);
+    transform: rotate(3deg) scale(75%) translateY(-2rem);
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
