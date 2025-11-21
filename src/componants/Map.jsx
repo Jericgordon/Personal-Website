@@ -56,6 +56,7 @@ export default function Map({
           <MapImageDot
             openID={openPic}
             key={dot.url}
+            percent={dot.percent}
             X={dot.X}
             Y={dot.Y}
             url={dot.url}
