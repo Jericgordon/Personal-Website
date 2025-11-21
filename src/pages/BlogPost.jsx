@@ -2,6 +2,7 @@ import React from 'react';
 import Navbar from '../componants/WebsiteNavbar.jsx'
 import { useParams } from 'react-router-dom';
 import blogPosts from "../data/blogPosts.json" with {type : "json"}
+import "../css/BlogPosts.css"
 
 export default function BlogPost() {  
     const { id } = useParams();
