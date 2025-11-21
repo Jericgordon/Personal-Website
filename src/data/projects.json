@@ -10,13 +10,15 @@
         "description":"An interactive viewing experience of prictures I took hiking the Appalachian Trail" ,
         "githubLink":"https://jericgordon.github.io/Personal-Website/#AT",
         "viewLink":"https://github.com/Jericgordon/Personal-Website",
-        "date":2025.8
+        "date":2025.8,
+        "featured":true
     },
     {
         "title":"Personal Website",
         "description":" A website to showcase Projects, Recent work, and writing",
         "githubLink":"https://jericgordon.github.io/Personal-Website/",
         "viewLink":"https://github.com/Jericgordon/Personal-Website",
-        "date":2025.5
+        "date":2025.5,
+        "featured":true
     }
 ]
