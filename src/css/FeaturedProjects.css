@@ -1,7 +1,8 @@
 .featured-projects-container {
     background-color: #1C3144;
     color: white;
-    transform: rotate(-3deg) scale(125%);
+    transform: rotate(-3deg) scale(125%) translateY(2rem);
+    z-index: auto;
 }
 
 
