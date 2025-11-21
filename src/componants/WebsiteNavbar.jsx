@@ -18,7 +18,7 @@ export default function WebsiteNavbar() {
               <Nav.Link href={base + "AT"}>Appalachian Trail</Nav.Link>
               <Nav.Link href={base + "projects"}>Projects</Nav.Link>
               <NavDropdown title="Posts" id="collapsible-nav-dropdown">
-                <NavDropdown.Item href={base + ""}>TidePool</NavDropdown.Item>
+                <NavDropdown.Item href={base + "blog/1"}>TidePool</NavDropdown.Item>
               </NavDropdown>
             </Nav>
           </Navbar.Collapse>
