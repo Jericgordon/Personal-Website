@@ -1,9 +1,9 @@
 .profile-background {
-    background-color: #7EA16B;
+    /* background-color: #7EA16B; */
     display: flex;
     justify-content: center;
     padding-bottom: 3rem;
-    transform: scale(125%) rotate(-2deg);
+    background: linear-gradient(3deg,#1C3144 20%, #7EA16B 20.3%)
 }
 
 .portrait {
@@ -36,6 +36,17 @@
     z-index: 9;
     display: flex;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    transform: rotate(2deg);
 
+}
+
+.icons {
+    margin-top: .5rem;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.icons a img {
+    height: 20px;
+    width: auto;
+    margin-right: .3rem;
 }
