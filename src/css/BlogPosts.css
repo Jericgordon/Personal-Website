@@ -5,3 +5,7 @@ h1 {
 .quote {
     margin-left: 1rem;
 }
+
+.blog-container {
+    margin: 1rem 10% 1rem 10%;
+}
