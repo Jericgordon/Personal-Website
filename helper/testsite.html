@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<!-- The point of this document is never to be hosted. Rather, It's a convinient place to write blogposts -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <link rel="stylesheet" href="../src/css/BlogPosts.css">
+    <div class="blog-container">
+    <h1 class="display-4">The making of the AT Map</h1>
+    <p>If you haven't seen my<a href="https://jericgordon.github.io/Personal-Website/#AT"> Appalachian Trail Map</a>, take a look at it before reading this article</p>
+    <p> The first version of it had an inverse scrolling effect where the map in Georgia, and as the user scrolled down the map would move up. This version of the project had a couple of issues: </p>
+    <ul>
+        <li>The scrolling effect was slightly jittery</li>
+        <li>Pictures were designed to be displayed with captions of different lengths</li>
+        <li>My picture / story density wasn't evenly spread throughout the trail</li>
+    </ul>
+    <p>It was a good first attempt at a display, but ultimately, it didn't showcase all the photos I wanted, and I couldn't' find a way to fix the jittery scroll effect.</p>
+    <p>So, I went back to the drawingboard, and scrapped the scrolling effect. Instead, to address the density problem, I replaced panels on the side of the trail with dots showing exactly where the photo was taken. How is this accomplished?</p>
+    <p>The Appalachian Trail is long enough that the curvature of the earth does matter, so any simplistic solution is designed to be off by a little bit. Further, the trail actually changes every year! There's no guarantee that any particular part of the trail you see on the post is actually still apart of the trail.</p>
+    <p>Given this, we could go down the route of mapping a Mercator projection onto our map of the AT, and using that to place location from the picture's exif data. While this solution is generally applicable, there's bound to be some dots that were on trail my year, but appear off trail on the map.</p>
+    <p>To me, the effect of dots on a line is really important. To achieve I manually drew a line on top of the trail, and exported as an SVG object. Then, in the react component, we overlay the line over the map.</p>
+    <p>How do we map the coordinates to a place on the line? We do a fancy estimate. The Appalachian trail runs generally Northeast. I have pictures at the beginning and end, and can get start and end coordinates from them. From that, if we pretend that the trail is a straight line, we can get a percentage estimate by averaging the horizontal and vertical progress. Once we have the percentage, we can ask the SVG object for the point that is that percentage along.</p>
+    <p>This is a compromise, and not a perfect system. If you know what you're looking for, you can find some misplaced pictures - There's one at the bridge to Harper's Ferry that's placed nearer to Fort Royal. But it's very close, and gives the effect of being perfectly mapped.</p>
+    <p>If you have questions, or would like to hire me, please feel free to reach out on Linkedin!</p>
+</div>
+
+</body>
+</html>

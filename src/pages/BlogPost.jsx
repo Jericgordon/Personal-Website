@@ -8,28 +8,38 @@ import seriesPosts from "../data/blogSeries.json"
 
 export default function BlogPost() {
     const { id } = useParams();
+    const [post,setPost] = useState(() => 1)
     const [series, setSeries]  = useState(() => "");
     const [first, setFirst]  = useState(() => 1);
     const [last, setLast]  = useState(() => 1);
 
+
     useEffect(() => {
-        setSeries(blogPosts[parseInt(id)]["series"]);
-    },[]);
+        blogPosts.forEach(p => {
+       
+            if (p.id == id){
+                console.log("post",p);
+                setPost(p)
+                setSeries(p["series"]);
+            } else {
+                console.log("all posts",p,id);
+            }
+        })
+    },[id]);
 
     useEffect(() => {
         if (series){
             console.log("series",series);
-            setFirst(seriesPosts[series]["first"]);
-            setLast(seriesPosts[series]["last"]);
+            let thisSeries = seriesPosts.filter(s => s.series_name == series)
+            setFirst(thisSeries["first"]);
+            setLast(thisSeries["last"]);
         }
-
-
     },[series]);
 
     return (
         <>
             <Navbar />
-            <div className="blog-container" dangerouslySetInnerHTML={{__html: blogPosts[parseInt(id)]["html"]}}></div>
+            <div className="blog-container" dangerouslySetInnerHTML={{__html: post["html"]}}></div>
             <PostTravelBar first={first} last={last} current ={id} />
         </>
     )
