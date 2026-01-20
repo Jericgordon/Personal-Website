@@ -28,3 +28,4 @@ helper/source/*
 helper/run_me.py
 helper/resized
 helper/__pycache__
+helper/post_source/*
