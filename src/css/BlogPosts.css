@@ -9,3 +9,7 @@ h1 {
 .blog-container {
     margin: 1rem 10% 1rem 10%;
 }
+
+.video-format {
+    width: 15rem;
+}

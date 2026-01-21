@@ -1,30 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
-<link rel="stylesheet" href="../src/css/BlogPosts.css">
-<div class="blog-container">
-    <h1 class="display-4">The making of the AT Map</h1>
-    <p>If you haven't seen my<a href="https://jericgordon.github.io/Personal-Website/#AT"> Appalachian Trail Map</a>, take a look at it before reading this article</p>
-    <p> The first version of it had an inverse scrolling effect where the map in Georgia, and as the user scrolled down the map would move up. This version of the project had a couple of issues: </p>
-    <ul>
-        <li>The scrolling effect was slightly jittery</li>
-        <li>Pictures were designed to be displayed with captions of different lengths</li>
-        <li>My picture / story density wasn't evenly spread throughout the trail</li>
-    </ul>
-    <p>It was a good first attempt at a display, but ultimately, it didn't showcase all the photos I wanted, and I couldn't' find a way to fix the jittery scroll effect.</p>
-    <p>So, I went back to the drawingboard, and scrapped the scrolling effect. Instead, to address the density problem, I replaced panels on the side of the trail with dots showing exactly where the photo was taken. How is this accomplished?</p>
-    <p>The Appalachian Trail is long enough that the curvature of the earth does matter, so any simplistic solution is designed to be off by a little bit. Further, the trail actually changes every year! There's no guarantee that any particular part of the trail you see on the post is actually still apart of the trail.</p>
-    <p>Given this, we could go down the route of mapping a Mercator projection onto our map of the AT, and using that to place location from the picture's exif data. While this solution is generally applicable, there's bound to be some dots that were on trail my year, but appear off trail on the map.</p>
-    <p>To me, the effect of dots on a line is really important. To achieve I manually drew a line on top of the trail, and exported as an SVG object. Then, in the react component, we overlay the line over the map.</p>
-    <p>How do we map the coordinates to a place on the line? We do a fancy estimate. The Appalachian trail runs generally Northeast. I have pictures at the beginning and end, and can get start and end coordinates from them. From that, if we pretend that the trail is a straight line, we can get a percentage estimate by averaging the horizontal and vertical progress. Once we have the percentage, we can ask the SVG object for the point that is that percentage along.</p>
-    <p>This is a compromise, and not a perfect system. If you know what you're looking for, you can find some misplaced pictures - There's one at the bridge to Harper's Ferry that's placed nearer to Fort Royal. But it's very close, and gives the effect of being perfectly mapped.</p>
-    <p>If you have questions, or would like to hire me, please feel free to reach out on Linkedin!</p>
-</div>
+    <link rel="stylesheet" href="../src/css/BlogPosts.css">
+    <div class="blog-container">
+        <p>In 2022 I hiked the 2193.7 miles of the Appalachian trail, spanning from Georgia to Maine. It was 6 months of
+            my life, and still one of the coolest experiences I've ever had, and I tried to take at least one picture a
+            day.<br></p>
+        <p>Fast forward to 2025, I'm in grad school for computer science, and in web development. My approach to
+            projects in grad school has always to do something cool within the constraints of the rubric, but when push
+            comes to shove, making something cool always comes first.<br><br>I've had the photos from my through hike as
+            a rotating desktop background for years at this point, but I've always wanted them to be more accessible.
+            Before this project, showing people my photos always involved sitting down with them and scrolling through
+            my Google Photos. While this worked, this wasn't sharable to a larger audience.<br><br>I'd seen news
+            articles do effect that showed where an event happened as you scrolled past. I pictured doing something like
+            that for my pictures, with a line moving slowly along the trail.<br><br>After looking through, I found this
+            <a href="https://en.wikipedia.org/wiki/Appalachian_Trail#/media/File:AppTrailMap.svg">map</a> that I really liked, and conveniently, it was already an SVG. The challenge then was highlighting
+            the pictures segment we were currently on. To accomplish this, I manually drew and smoothed a line as an SVG
+            object that followed the trail. Then, I used the inbuilt property of SVG lines which allows you to put
+            dashes on the line. Except, in my case, I made the dashes spaced twice the length of the whole line, and
+            moved the offset as I scrolled. This allowed me to have the effect I wanted of a the line being filled in as
+            the user scrolled down, and the map moved up.<br><br>I made the map take up about half of the screen, and
+            used Bootstrap cards to host the pictures as well as some text describing what happened there. While this
+            version isn't hosted anymore, you can see a video of the product here. While this isn't the version I
+            settled on, I am really happy with how much of it turned out.</p>
+        <p><video controls class="video-format" src="../public/Previous_version_demo.mp4"></video><br><br>I'll talk next post about my issues with this version of the project<br></p>
+    </div>
 
 </body>
+
 </html>
