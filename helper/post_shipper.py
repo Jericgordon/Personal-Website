@@ -1,8 +1,8 @@
 import json
 import re
 #takes whatever data is in testssite and exports it
-id = 666
-series_name = "ATtrail"
+id = 30
+series_name = "ATMap"
 
 
 def main():
@@ -21,6 +21,8 @@ def getHTML():
         #print(len("""<div class="blog-container">"""))
         match = re.findall(pattern,text)
         new_text = str(match[0])
+        new_text = re.sub(r"\\n","",new_text)
+        print(new_text)
     
         return new_text[6:len(match) -9]
     
