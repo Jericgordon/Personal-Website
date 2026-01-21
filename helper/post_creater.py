@@ -7,10 +7,10 @@ import re
 
 
 def main():
-    source = "helper/post_source/PocketProject.html"
+    source = "helper/post_source/PocketProject 2.html"
 
     remove_list = ["<head>.*</head>"," class=\"[^>]*\"","<span[ ]*",\
-                   "<span>","</span>","<br>","<html>","</html>","&nbsp;","<body>","</body>","<p>*</p>*"]
+                   "<span>","</span>","<html>","</html>","&nbsp;","<body>","</body>","<p>*</p>*"]
 
     source = fix_source(source)
     with(open(source) as file):
@@ -21,13 +21,14 @@ def main():
     
     # text = re.sub("><",">\n<",text)
     text = re.sub(">>",">",text)
-    with(open("./helper/testsite.html","r+") as file):
+    print(text)
+    text_site = ""
+    with(open("./helper/testsite.html","r") as file):
         text_site = file.read()
-        text_site = re.sub("<div class=\"blog-container\">.*</div>","<div class=\"blog-container\">" + text + "</div>",text_site,1)
-        file.seek(0)
+        text_site = re.sub("<div class=\"blog-container\">(\s*|.)*<\/div>","<div class=\"blog-container\">" + text + "</div>",text_site)
+    #print(text_site)
+    with(open("./helper/testsite.html","w") as file):
         file.write(text_site)
-        file.truncate()
-
 
 def fix_source(text:str):
     """Helper function so that I can just copy and paste the relative path without opening it every time."""
