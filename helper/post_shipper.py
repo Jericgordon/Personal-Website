@@ -1,7 +1,7 @@
 import json
 import re
 #takes whatever data is in testssite and exports it
-id = 30
+id = 31
 series_name = "ATMap"
 
 
@@ -22,7 +22,9 @@ def getHTML():
         match = re.findall(pattern,text)
         new_text = str(match[0])
         new_text = re.sub(r"\\n","",new_text)
-        print(new_text)
+        new_text = re.sub(r"\\","",new_text)
+
+        # print(new_text)
     
         return new_text[6:len(match) -9]
     
