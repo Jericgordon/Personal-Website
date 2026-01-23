@@ -5,17 +5,35 @@ import leftDouble from "../icons/google-icons/keyboard_double_arrow_left_24dp_00
 import left from "../icons/google-icons/keyboard_arrow_left_24dp_000000_FILL0_wght400_GRAD0_opsz24.png"
 
 import "../css/PostTravelBar.css"
-const id = 1;
 
 /* This template just exists to make my life easier when making new pages*/
-export default function PostTravelBar({first,last,current}) {
-    console.log(first,last,parseInt(current));
+export default function PostTravelBar({first,last,id,setID}) {
+    function updateURL(){
+        console.log("updating URL");
+    }
+
+    function goToPost(post_number){
+        /* This function takes in a post_number which is the naive navigation, and bounds it. 
+        It also handles changing the URL
+        */
+       console.log("recieved request to go to post", post_number);
+        if (post_number < first){
+            setID(first);
+        } else if (post_number > last){
+            setID(last);
+        } else {
+            setID(post_number);
+        }
+        console.log("set ID to ", post_number);
+    }
+
+
     return (
         <div className="post-travel-bar">
-                <a href={"/#blog/" + first}><img src={leftDouble} alt="Go to earliest post" /></a>
-                <a href={"/#blog/" + ((parseInt(current) < last) ? parseInt(current) + 1 : parseInt(current))}><img src={left} alt="Go to previous post" /></a>
-                <a href={"/#blog/" + ((parseInt(current) > first) ? parseInt(current) - 1 : parseInt(current))}><img src={right} alt="Go to next post" /></a>
-                <a href={"/#blog/" + last}><img src={rightDouble} alt="Go to Latest post" /></a>
+                <img onClick={() => goToPost(first)} src={leftDouble} alt="Go to earliest post" />
+                <img onClick={() => goToPost(id - 1)} src={left} alt="Go to previous post" />
+                <img onClick={() => goToPost(id + 1)} src={right} alt="Go to next post" />
+                <img onClick={() => goToPost(last)} src={rightDouble} alt="Go to Latest post" />
         </div>
     )
 }
