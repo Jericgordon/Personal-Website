@@ -10,13 +10,13 @@ import BlogPost from "./pages/BlogPost.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <HashRouter>
-    <StrictMode>
+    {/* <StrictMode> */}
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/AT" element={<ATPage />} />
         <Route path="/projects" element={<Projects />} />
         <Route path="/blog/:id"  element={<BlogPost />} />
       </Routes>
-    </StrictMode>
+    {/* </StrictMode> */}
   </HashRouter>
 );
