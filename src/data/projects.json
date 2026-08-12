@@ -19,6 +19,14 @@
         "githubLink":"https://jericgordon.github.io/Personal-Website/",
         "viewLink":"https://github.com/Jericgordon/Personal-Website",
         "date":2025.5,
+        "featured":false
+    },
+    {
+        "title":"Fanfiction Graph",
+        "description":"An interactive exploration of a fanfiction community on AO3",
+        "githubLink":"https://jericgordon.github.io/hdg/",
+        "viewLink":"https://github.com/Jericgordon/Personal-Website/#blog/hdg",
+        "date":2026.5,
         "featured":true
     }
 ]

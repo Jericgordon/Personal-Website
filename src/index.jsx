@@ -6,6 +6,7 @@ import ATPage from "./pages/AppalachianTrailPage.jsx"
 import HomePage from "./pages/HomePage.jsx";
 import Projects from './pages/Projects.jsx';
 import BlogPost from "./pages/BlogPost.jsx";
+import Hdg from './pages/Hdg.jsx';
 
 
 ReactDOM.createRoot(document.getElementById("root")).render(
@@ -16,6 +17,8 @@ ReactDOM.createRoot(document.getElementById("root")).render(
         <Route path="/AT" element={<ATPage />} />
         <Route path="/projects" element={<Projects />} />
         <Route path="/blog/:id"  element={<BlogPost />} />
+        <Route path="/blog/hdg"  element={<Hdg />} />
+
       </Routes>
     {/* </StrictMode> */}
   </HashRouter>
