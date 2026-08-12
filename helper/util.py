@@ -13,7 +13,7 @@ def get_filenames_in_folder(folder_path):
 
     Throws:
         File not found error: if it cannot find the file
-        TypeError: if it's pointed to an opject that's not a directory
+        TypeError: if it's pointed to an object that's not a directory
     """
 
     if not os.path.exists(folder_path):
