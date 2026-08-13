@@ -159,6 +159,7 @@ class StoryNetwork extends React.Component {
             option={this.getOption()}
             onEvents={{'click':this.reactToClick}}
             lazyUpdate={false}
+            id='hdg-story-network'
         />)
     }
 }
