@@ -5,11 +5,12 @@ import { useState } from 'react';
 import { GraphChart } from "echarts/charts";
 import { LabelLayout, UniversalTransition } from 'echarts/features';
 import { CanvasRenderer } from 'echarts/renderers';
-import { TooltipComponent } from "echarts/components";
+import { LegendComponent, TooltipComponent } from "echarts/components";
 
 echarts.use([
   TooltipComponent,
   GraphChart,
+  LegendComponent,
   LabelLayout,
   CanvasRenderer,
   TooltipComponent
@@ -92,6 +93,10 @@ class StoryNetwork extends React.Component {
     }
 
     getOption = () => {
+        let years = new Set(this.props.data.nodes.map(function (node) {
+                    return new Date(node.date_published).getFullYear();
+                }));
+        console.debug(years);
         const obj =  {
             tooltip: {},
             series:[{
@@ -100,13 +105,20 @@ class StoryNetwork extends React.Component {
             name: 'HDG',
             type: 'graph',
             layout: "none",
+            legend: [
+            {
+                data: years
+            }
+            ],
             data: this.props.data.nodes,
             links: this.getStyledLinks(this.links),
             edgeSymbol:(this.state.selectedNode == this.defaults.NODE_NOT_SELECTED)? 
                 this.defaults.edgeSymbolUnselected : this.defaults.edgeSymbolSelected,
             animation: true,
             roam:true,
-            // categories: graph.categories,
+            categories: this.props.data.nodes.map((node) => {
+                return new Date(node.date_published).getFullYear();
+            }),
             edgeSymbolSize: 5,
             tooltip:{
                 trigger:'item',
