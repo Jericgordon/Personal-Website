@@ -6,12 +6,16 @@ import stories_by_year_data from '../data/blogposts/hdg/stories_by_year.json'
 import StoriesByYearGraph from '../componants/hdg/StoriesByYearGraph'
 import WordcountByAuthorGraph from '../componants/hdg/WordcountByAuthorGraph.jsx'
 import author_wordcount_data from '../data/blogposts/hdg/author_wordcounts.json'
+import author_share_of_kudos_data from '../data/blogposts/hdg/top_authors_by_kudos.json'
+import KudosByAuthor from '../componants/hdg/KudosByAuthor.jsx'
+
 export default function Hdg() {
     return (
         <>
             <Navbar />
             <StoriesByYearGraph data={stories_by_year_data}/>
             <WordcountByAuthorGraph data={author_wordcount_data}/>
+            <KudosByAuthor data={author_share_of_kudos_data}/>
             <StoryNetwork data={networkData} />
         </>
     )

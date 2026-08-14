@@ -36,11 +36,9 @@ class WordcountByAuthorGraph extends React.Component{
         const option = {
             tooltip:{},
             xAxis: {
-                name: 'Years',
-                nameLocation:'center',
             },
             yAxis: {
-                name: 'Number of stories',
+                name: 'Total wordcount by Author',
                 nameLocation:'center'
             },
             series: [
