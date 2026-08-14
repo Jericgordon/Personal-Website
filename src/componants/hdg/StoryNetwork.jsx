@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactEChartsCore from 'echarts-for-react/lib/core';
 import * as echarts from 'echarts/core';
+import ReactECharts from 'echarts-for-react';
 import { useState } from 'react';
 import { GraphChart } from "echarts/charts";
 import { LabelLayout, UniversalTransition } from 'echarts/features';
@@ -20,6 +21,8 @@ class StoryNetwork extends React.Component {
     constructor(props){
         super(props)
         console.assert(props.data, "No data passed to storyNetwork");
+        this.years = [...new Set(this.props.data.nodes.map((n) => {return String(n.category)}))];
+        this.years.sort()
         this.defaults = {
             NODE_NOT_SELECTED : -5,
             colorUnselected : 'grey',
@@ -93,32 +96,35 @@ class StoryNetwork extends React.Component {
     }
 
     getOption = () => {
-        let years = new Set(this.props.data.nodes.map(function (node) {
-                    return new Date(node.date_published).getFullYear();
-                }));
-        console.debug(years);
-        const obj =  {
+        const options =  {
             tooltip: {},
+            color:["#103783", "#2C4F94", "#4867A5", "#637FB7", "#7F97C8", "#9BAFD9"],
+            legend: [{
+                data: this.years,
+
+                show: true
+            }],
+                title: {
+                text: 'Stories in the HDG universe',
+                subtext : 'recommended by at least one other story',
+                zlevel: 5,
+                show:true
+            },
             series:[{
             animationDelay:5,
             animationEasing:'cubicInOut',
             name: 'HDG',
             type: 'graph',
             layout: "none",
-            legend: [
-            {
-                data: years
-            }
-            ],
             data: this.props.data.nodes,
             links: this.getStyledLinks(this.links),
             edgeSymbol:(this.state.selectedNode == this.defaults.NODE_NOT_SELECTED)? 
                 this.defaults.edgeSymbolUnselected : this.defaults.edgeSymbolSelected,
             animation: true,
             roam:true,
-            categories: this.props.data.nodes.map((node) => {
-                return new Date(node.date_published).getFullYear();
-            }),
+            categories: this.years.map(year => ({
+                name: String(year)
+                    })),
             edgeSymbolSize: 5,
             tooltip:{
                 trigger:'item',
@@ -126,7 +132,7 @@ class StoryNetwork extends React.Component {
             },
             label: {
                 show: true,
-                postition: 'right'
+                position: 'right'
             },        
             labelLayout: {
             hideOverlap: true
@@ -137,7 +143,7 @@ class StoryNetwork extends React.Component {
             }
             }]
         };  
-        return obj;
+        return options;
     }
 
     //shows the tooltip when hovering over the nodes
@@ -163,9 +169,8 @@ class StoryNetwork extends React.Component {
 
     render(){
         return (
-        <ReactEChartsCore
-            echarts={echarts}
-            style={{minWidth:"70vw",minHeight:"70vw"}}
+        <ReactECharts
+            //echarts={echarts}
             notMerge={false}
             // showLoading={isLoading}
             option={this.getOption()}

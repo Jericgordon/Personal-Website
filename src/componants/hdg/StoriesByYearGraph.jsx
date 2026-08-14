@@ -29,6 +29,11 @@ class StoriesByYearGraph extends React.Component{
         let storiesCount = Object.values(this.props.data.count);
         const option = {
             tooltip:{},
+            title: {
+                text: 'New HDG stories by year',
+                zlevel: 5,
+                show:true
+            },
             xAxis: {
                 type: 'category',
                 name: 'Years',
@@ -58,7 +63,6 @@ class StoriesByYearGraph extends React.Component{
         return (
         <ReactEChartsCore
             echarts={echarts}
-            style={{Width:"50vw",Height:"50vw"}}
             notMerge={false}
             // showLoading={isLoading}
             option={this.getOption()}

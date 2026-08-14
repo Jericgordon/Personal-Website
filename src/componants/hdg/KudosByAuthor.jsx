@@ -36,7 +36,7 @@ class KudosByAuthor extends React.Component{
         title: {
             text: 'Share of Kudos by Author',
             subtext : 'having > 1000 kudos',
-            top: 50,
+            top: 20,
             zlevel: 5,
             show:true
         },
@@ -66,7 +66,6 @@ class KudosByAuthor extends React.Component{
         return (
         <ReactEChartsCore
             echarts={echarts}
-            style={{Width:"50vw",Height:"70vw",minHeight:"40vw"}}
             notMerge={false}
             // showLoading={isLoading}
             option={this.getOption()}

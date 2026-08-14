@@ -18,21 +18,30 @@ echarts.use([
 
 
 
-class WordcountByAuthorGraph extends React.Component{
+class NormalizedRecs extends React.Component{
     constructor(props){
     super(props)
     console.assert(props.data, "No data passed to storyNetwork");
-    this.authorName = Object.keys(this.props.data.wordcount);
-    this.wordcount = Object.values(this.props.data.wordcount);
+    const conversion = Object.keys(this.props.data.author_name).map((s,i)=> {
+        return[i,Math.max(this.props.data.normalized_recs[s],this.props.data.normalized_kudos[s])]
+    }).sort((a,b) => a[1] < b[1]);
+    this.converter = {}
+    for (let i = 0;i<conversion.length;i++){
+        let fromNum = conversion[i][0]
+        this.converter[fromNum] = i 
+    }
+    this.recsSeries = Object.keys(this.props.data.author_name).map((s,i)=> {
+        let newIndex = this.converter[i]
+        return[newIndex,this.props.data.normalized_recs[s]]
+    })
+    this.kudosSeries = Object.keys(this.props.data.author_name).map((s,i)=> {
+        let newIndex = this.converter[i]
+        return[newIndex,this.props.data.normalized_kudos[s]]
+    })
     }
 
     getOption = () => {
-        let glitchyCount = this.props.data.wordcount['GlitchyRobo'];
         
-        let glitchyIndex = this.authorName.indexOf('GlitchyRobo');
-        let scatterData = this.authorName.map((authorName,i) =>{
-                    return [i,this.wordcount[i]]
-                });
         const option = {
             tooltip:{},
             xAxis: {
@@ -42,15 +51,14 @@ class WordcountByAuthorGraph extends React.Component{
                 nameLocation:'center'
             },
             title: {
-                text: 'Total wordcount per author',
-                subtext: 'GlitchyRobot marked in green',
+                text: 'Normalized recommendations and wordcount',
                 zlevel: 5,
                 show:true
             },
             series: [
             {
-                data: scatterData,
-                symbolSize:6,
+                data: this.recsSeries,
+                symbolSize:4,
                 type: 'scatter',
                 tooltip:{
                     trigger:'item',
@@ -58,9 +66,10 @@ class WordcountByAuthorGraph extends React.Component{
                 },
             },
             {
-                data: [[glitchyIndex,glitchyCount]],
-                symbolSize:10,
-                type: 'effectScatter',
+                data: this.kudosSeries,
+                symbolSize:4,
+                type: 'scatter',
+                color:'green',
                 tooltip:{
                     trigger:'item',
                     formatter: this.showTooltip
@@ -72,11 +81,11 @@ class WordcountByAuthorGraph extends React.Component{
     }
 
     showTooltip = (params) => {
-        let authorNum = params.data[0]
-        let numWords = params.data[1]
+        let i = params.data[0]
         let text = 
-        `Author: ${this.authorName.at(authorNum)} <br>
-        Total words writen: ${numWords.toLocaleString('en-US')}`;
+        `Title: ${this.props.data.title[i]} <br>
+        Recs: ${this.props.data.recs[i]}<br>
+        Kudos ${this.props.data.kudos[i]}`;
         return text
         
     }
@@ -89,9 +98,9 @@ class WordcountByAuthorGraph extends React.Component{
             // showLoading={isLoading}
             option={this.getOption()}
             lazyUpdate={false}
-            id='author-by-wordcount'
+            id='kudos-recs-coralation'
         />)
     }
 }
 
-export default WordcountByAuthorGraph;
+export default NormalizedRecs;

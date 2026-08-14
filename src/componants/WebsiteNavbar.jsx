@@ -38,7 +38,7 @@ let base = "#"
             <NavDropdown title="Posts" id="collapsible-nav-dropdown">
               <NavDropdown.Item href={Thref}>TidePool</NavDropdown.Item>
               <NavDropdown.Item href={"#blog/30"}>AT Map</NavDropdown.Item>
-              <NavDropdown.Item href={"#blog/hdg"}>Fanfiction Analysis</NavDropdown.Item>
+              {/* <NavDropdown.Item href={"#blog/hdg"}>Fanfiction Analysis</NavDropdown.Item> */}
             </NavDropdown>
           </Nav>
         </Navbar.Collapse>
