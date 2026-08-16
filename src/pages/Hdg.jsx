@@ -186,7 +186,7 @@ export default function Hdg() {
         <NormalizedRecs data={normalized_recs} />   
         <p>
           <br />
-          Looking at the data, they’re quite closely correlated, with a mean
+          Looking at the data, they’re correlated, with a mean
           square error of 0.00106.
         </p>
         <h2 id="conclusion">Conclusion</h2>
