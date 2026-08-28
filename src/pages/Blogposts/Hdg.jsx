@@ -1,16 +1,16 @@
 import React from "react";
-import Navbar from "../componants/WebsiteNavbar";
-import StoryNetwork from "../componants/hdg/StoryNetwork";
-import network_data from "../data/blogposts/hdg/network_data.json";
-import stories_by_year_data from "../data/blogposts/hdg/stories_by_year.json";
-import StoriesByYearGraph from "../componants/hdg/StoriesByYearGraph";
-import WordcountByAuthorGraph from "../componants/hdg/WordcountByAuthorGraph.jsx";
-import author_wordcount_data from "../data/blogposts/hdg/author_wordcounts.json";
-import author_share_of_kudos_data from "../data/blogposts/hdg/top_authors_by_kudos.json";
-import KudosByAuthor from "../componants/hdg/KudosByAuthor.jsx";
-import NormalizedRecs from "../componants/hdg/Normalizedrecs.jsx";
-import normalized_recs from "../data/blogposts/hdg/normalized_recs.json";
-import "../css/BlogPosts/hdg.css";
+import Navbar from "./../../componants/WebsiteNavbar.jsx";
+import StoryNetwork from "../../componants/hdg/StoryNetwork.jsx";
+import network_data from "../../data/blogposts/hdg/network_data.json";
+import stories_by_year_data from "../../data/blogposts/hdg/stories_by_year.json";
+import StoriesByYearGraph from "../../componants/hdg/StoriesByYearGraph.jsx";
+import WordcountByAuthorGraph from "../../componants/hdg/WordcountByAuthorGraph.jsx";
+import author_wordcount_data from "../../data/blogposts/hdg/author_wordcounts.json";
+import author_share_of_kudos_data from "../../data/blogposts/hdg/top_authors_by_kudos.json";
+import KudosByAuthor from "../../componants/hdg/KudosByAuthor.jsx";
+import NormalizedRecs from "../../componants/hdg/Normalizedrecs.jsx";
+import normalized_recs from "../../data/blogposts/hdg/normalized_recs.json";
+import "../../css/BlogPosts/hdg.css";
 
 export default function Hdg() {
   return (
