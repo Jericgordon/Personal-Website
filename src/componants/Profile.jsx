@@ -15,11 +15,11 @@ export default function Profile (){
                     <p>Software Engineer</p>
                     <p>MCS Dec. 2025</p>
                     <div className="icons">
-                    <a href="https://www.linkedin.com/in/jen-gordon-northeastern/">
-                        <img src={githubIcon} alt="Linkedin Link" />
-                    </a>
                     <a href="https://github.com/Jericgordon">
-                        <img src={linkedinIcon} alt="Gihub Link" />
+                        <img src={githubIcon} alt="Github Link" />
+                    </a>
+                    <a href="https://www.linkedin.com/in/jen-gordon-northeastern/">
+                        <img src={linkedinIcon} alt="Linkedin Link" />
                     </a>
                     </div>
                 </div>
