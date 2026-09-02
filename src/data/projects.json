@@ -8,8 +8,8 @@
     {
         "title":"Appalachian Trail Visualizations",
         "description":"An interactive viewing experience of prictures I took hiking the Appalachian Trail" ,
-        "githubLink":"https://jericgordon.github.io/Personal-Website/#AT",
-        "viewLink":"https://github.com/Jericgordon/Personal-Website",
+        "githubLink":"https://github.com/Jericgordon/Personal-Website",
+        "viewLink":"https://jericgordon.github.io/Personal-Website/#AT",
         "date":2025.8,
         "featured":true
     },
@@ -24,8 +24,8 @@
     {
         "title":"Fanfiction Graph",
         "description":"An interactive exploration of a fanfiction community on AO3",
-        "githubLink":"https://jericgordon.github.io/hdg/",
-        "viewLink":"https://github.com/Jericgordon/Personal-Website/#blog/hdg",
+        "githubLink":"https://github.com/Jericgordon/HDG",
+        "viewLink":"https://jericgordon.github.io/Personal-Website/#blog/hdg",
         "date":2026.5,
         "featured":true
     }

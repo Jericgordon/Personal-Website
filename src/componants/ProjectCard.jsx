@@ -5,7 +5,7 @@ import { Button } from "react-bootstrap";
 import "../css/ProjectCard.css"
 
 export default function ProjectCard ({title,description,ghLink,viewLink}){
-    console.log("loading card", title);
+    console.debug("loading card", title);
     return( 
         <div className="card-style">
             <h3>{title}</h3>
