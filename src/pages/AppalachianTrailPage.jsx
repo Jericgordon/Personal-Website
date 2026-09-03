@@ -6,7 +6,8 @@ import ReactGA from 'react-ga4';
 
 export default function HomePage() {
     ReactGA.initialize('G-JJ3LCVWMFP');
-    ReactGA.pageview(window.location.pathname);
+        ReactGA.send({ hitType: "pageview", page: window.location.pathname + window.location.search });   
+
 
     return (
         <>

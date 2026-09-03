@@ -17,7 +17,8 @@ export default function BlogPost() {
     const [last, setLast]  = useState(() => 1);
 
     ReactGA.initialize('G-JJ3LCVWMFP');
-    ReactGA.pageview(window.location.pathname);
+        ReactGA.send({ hitType: "pageview", page: window.location.pathname + window.location.search });   
+
     useEffect(() => {
         if (id){
             setPostID(parseInt(id));

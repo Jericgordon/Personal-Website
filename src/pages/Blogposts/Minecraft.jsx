@@ -14,7 +14,8 @@ import normalized_recs from "../../data/blogposts/minecraft/normalized_recs.json
 import ReactGA from 'react-ga4';
 export default function Hdg() {
     ReactGA.initialize('G-JJ3LCVWMFP');
-    ReactGA.pageview(window.location.pathname);
+    ReactGA.send({ hitType: "pageview", page: window.location.pathname + window.location.search });   
+
   return (
     <>
       <Navbar />
