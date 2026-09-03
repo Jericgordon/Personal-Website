@@ -11,8 +11,12 @@ import KudosByAuthor from "../../componants/hdg/KudosByAuthor.jsx";
 import NormalizedRecs from "../../componants/hdg/Normalizedrecs.jsx";
 import normalized_recs from "../../data/blogposts/hdg/normalized_recs.json";
 import "../../css/BlogPosts/hdg.css";
+import ReactGA from 'react-ga4';
 
 export default function Hdg() {
+  ReactGA.initialize('G-JJ3LCVWMFP');
+  ReactGA.pageview(window.location.pathname);
+  
   return (
     <>
       <Navbar />
@@ -26,8 +30,8 @@ export default function Hdg() {
         </p>
 
         <p>
-          This relatively short story (only 26k words) spawned a community of
-          writers in the same universe that rapidly grew.
+          This relatively short story (only 26k words) spawned a rapidly-growing community of
+          writers in the same universe.
         </p>
         <StoriesByYearGraph data={stories_by_year_data} />
 
@@ -36,7 +40,7 @@ export default function Hdg() {
           Currently, the words written by the original author are far outweighed
           by the contributions of others. This observation is not intended to
           minimize the influence of the original author, but to draw attention
-          to the collaborative nature of the development of this setting.
+          to the collaborative nature of this setting's development.
           <br />
         </p>
         <WordcountByAuthorGraph data={author_wordcount_data} />

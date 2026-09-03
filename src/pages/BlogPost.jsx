@@ -5,6 +5,7 @@ import blogPosts from "../data/blogPosts.json" with {type : "json"}
 import PostTravelBar from '../componants/postTravelBar.jsx';
 import "../css/BlogPosts.css"
 import seriesPosts from "../data/blogSeries.json"
+import ReactGA from 'react-ga4'
 
 export default function BlogPost() {
     const topOfPageRef = useRef();
@@ -15,6 +16,8 @@ export default function BlogPost() {
     const [first, setFirst]  = useState(() => 1);
     const [last, setLast]  = useState(() => 1);
 
+    ReactGA.initialize('G-JJ3LCVWMFP');
+    ReactGA.pageview(window.location.pathname);
     useEffect(() => {
         if (id){
             setPostID(parseInt(id));

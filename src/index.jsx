@@ -1,4 +1,4 @@
-import React, { Suspense } from 'react';
+import React, { useContext,createContext,Suspense } from 'react';
 import { HashRouter, Routes, Route } from 'react-router';
 import ReactDOM from 'react-dom/client';
 
@@ -9,8 +9,6 @@ const ATPage = React.lazy(() => import("./pages/AppalachianTrailPage.jsx"))
 const BlogPost = React.lazy(() => import("./pages/BlogPost.jsx"))
 const Hdg = React.lazy(() => import('./pages/Blogposts/Hdg.jsx'))
 const Minecraft = React.lazy(() => import('./pages/Blogposts/Minecraft.jsx'))
-
-
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <HashRouter>

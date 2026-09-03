@@ -3,20 +3,28 @@ import rightArrow from "../icons/google-icons/arrow_forward_24dp_FFFFFF_FILL0_wg
 import React from "react";
 import { Button } from "react-bootstrap";
 import "../css/ProjectCard.css"
+import ReactGA from 'react-ga4';
 
 export default function ProjectCard ({title,description,ghLink,viewLink}){
-    console.debug("loading card", title);
+    ReactGA.initialize('G-JJ3LCVWMFP');
+    function registerClick(link){
+        ReactGA.event({
+        category: 'Click',
+        action: '-> ' + link,
+        label: 'Project Card'
+        });
+    }    
     return( 
         <div className="card-style">
             <h3>{title}</h3>
             <div className="card-description">
                 {description}
             </div>
-            <Button size="sm" href={ghLink} variant="dark" className="github-button">
+            <Button onClick={registerClick(ghLink)} size="sm" href={ghLink} variant="dark" className="github-button">
                 <img height={15} width={15} src={github_image}></img>
             </Button>
 
-            <Button size="sm" href={viewLink} variant="success" className="view-button">
+            <Button onClick={registerClick(viewLink)}size="sm" href={viewLink} variant="success" className="view-button">
                 <img height={15} width={15} src={rightArrow}></img>
                 view
             </Button>

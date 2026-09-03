@@ -11,8 +11,10 @@ import KudosByAuthor from "../../componants/minecraft/KudosByAuthor.jsx";
 import NormalizedRecs from "../../componants/minecraft/Normalizedrecs.jsx";
 import normalized_recs from "../../data/blogposts/minecraft/normalized_recs.json";
 // import "../css/BlogPosts/minecraft.css";
-
+import ReactGA from 'react-ga4';
 export default function Hdg() {
+    ReactGA.initialize('G-JJ3LCVWMFP');
+    ReactGA.pageview(window.location.pathname);
   return (
     <>
       <Navbar />
