@@ -8,8 +8,7 @@ import ReactGA from 'react-ga4'
 export default function Profile (){
     ReactGA.initialize('G-JJ3LCVWMFP'); 
     function registerClick(link){
-        ReactGA.event({
-        category: 'Click',
+        ReactGA.event('Click',{
         action: '-> ' + link,
         label: 'Profile'
         });
