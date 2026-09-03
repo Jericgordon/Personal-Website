@@ -14,14 +14,12 @@ ReactDOM.createRoot(document.getElementById("root")).render(
   <HashRouter>
     {/* <StrictMode> */}
       <Routes>
-        <Suspense fallback={<div>Loading...</div>}>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/AT" element={<ATPage />} />
-          <Route path="/projects" element={<Projects />} />
-          <Route path="/blog/:id"  element={<BlogPost />} />
-          <Route path="/blog/hdg"  element={<Hdg />} />
-          <Route path="/blog/minecraft"  element={<Minecraft />} />
-        </Suspense>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/AT" element={<ATPage />} />
+        <Route path="/projects" element={<Projects />} />
+        <Route path="/blog/:id"  element={<BlogPost />} />
+        <Route path="/blog/hdg"  element={<Hdg />} />
+        <Route path="/blog/minecraft"  element={<Minecraft />} />
       </Routes>
     {/* </StrictMode> */}
   </HashRouter>
