@@ -1,4 +1,4 @@
-import React, { useContext,createContext,Suspense } from 'react';
+import React, { useContext,createContext } from 'react';
 import { HashRouter, Routes, Route } from 'react-router';
 import ReactDOM from 'react-dom/client';
 
