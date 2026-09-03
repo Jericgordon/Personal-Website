@@ -7,5 +7,19 @@ export default defineConfig({
     test: {
         globals: true, // 
         environment: 'jsdom'
-     }
+     },
+    build: {
+    rollupOptions: {
+      output: {
+        manualChunks(id) {
+          if (id.includes('node_modules')) {
+            return 'vendor'; // Split vendor libraries
+          }
+          if (id.includes('src/components/')) {
+            return 'components'; // Split components into their own chunk
+          }
+        },
+      },
+    },
+  }
 });
