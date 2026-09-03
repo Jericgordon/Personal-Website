@@ -12,11 +12,12 @@ import NormalizedRecs from "../../componants/hdg/Normalizedrecs.jsx";
 import normalized_recs from "../../data/blogposts/hdg/normalized_recs.json";
 import "../../css/BlogPosts/hdg.css";
 import ReactGA from 'react-ga4';
+import { useLocation } from 'react-router-dom';
 
 export default function Hdg() {
   ReactGA.initialize('G-JJ3LCVWMFP');
-  ReactGA.send({ hitType: "pageview", page: window.location.pathname + window.location.search });   
-  
+    ReactGA.send({ hitType: "pageview",page: useLocation().pathname }); 
+    console.log("path",window.location.pathname);
   return (
     <>
       <Navbar />

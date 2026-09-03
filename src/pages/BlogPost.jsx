@@ -6,6 +6,7 @@ import PostTravelBar from '../componants/postTravelBar.jsx';
 import "../css/BlogPosts.css"
 import seriesPosts from "../data/blogSeries.json"
 import ReactGA from 'react-ga4'
+import { useLocation } from 'react-router-dom';
 
 export default function BlogPost() {
     const topOfPageRef = useRef();
@@ -17,7 +18,7 @@ export default function BlogPost() {
     const [last, setLast]  = useState(() => 1);
 
     ReactGA.initialize('G-JJ3LCVWMFP');
-        ReactGA.send({ hitType: "pageview", page: window.location.pathname + window.location.search });   
+    ReactGA.send({ hitType: "pageview",page: useLocation().pathname}); 
 
     useEffect(() => {
         if (id){
