@@ -144,10 +144,10 @@ class StoryNetwork extends React.Component {
             labelLayout: {
             hideOverlap: true
             },
-            scaleLimit: {
-            min: 0.4,
-            max: 15
-            }
+            // scaleLimit: {
+            // min: 0.4,
+            // max: 15
+            // }
             }]
         };  
         return options;
