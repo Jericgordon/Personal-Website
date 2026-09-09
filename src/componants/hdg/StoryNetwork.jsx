@@ -128,7 +128,7 @@ class StoryNetwork extends React.Component {
             edgeSymbol:(this.state.selectedNode == this.defaults.NODE_NOT_SELECTED)? 
                 this.defaults.edgeSymbolUnselected : this.defaults.edgeSymbolSelected,
             animation: true,
-            roam:'scale',
+            roam:true,
             categories: this.years.map(year => ({
                 name: String(year)
                     })),
@@ -144,10 +144,10 @@ class StoryNetwork extends React.Component {
             labelLayout: {
             hideOverlap: true
             },
-            // scaleLimit: {
-            // min: 0.4,
-            // max: 15
-            // }
+            scaleLimit: {
+            min: 0.4,
+            max: 15
+            }
             }]
         };  
         return options;
