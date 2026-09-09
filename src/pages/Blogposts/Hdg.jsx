@@ -23,34 +23,35 @@ export default function Hdg() {
       <Navbar />
       <div className="article-wrapper">
         <h1 className="title">Canon in the Anarchy</h1>
+        
+        
         <h2 id="introduction">What is HDG?</h2>
         <p>
           Human Domestication Guide is an 18+ story written by user GlitchyRobot
           on ReadOnlyMind about a group of aliens invading Earth in the 26th
-          century.
-        </p>
-
-        <p>
-          This relatively short story (only 26k words) spawned a rapidly-growing community of
-          writers in the same universe.
+          century. This relatively short story (only 26k words) spawned a rapidly-growing community of
+          writers in the same universe. I became aware of it because of my involvment in the trans community. 
+          Many of the writers in the community (including the original author) are also trans.
         </p>
         <StoriesByYearGraph data={stories_by_year_data} />
+        <p>
+          I became interested in it more acadmically because of the challenges this lovely little community
+          faced as it began to grow. Many fanfiction commmunities have a wealth of source material to draw on. 
+          The Marvel Cinematic Universe, for example, has millions of words and a wealth of fully developed characters
+          to build on. 
+        </p>
 
         <p>
-          Other works quickly outpaced the original in both size and scope.
+          However, in the world of HDG, Other works quickly outpaced the original in both size and scope.
           Currently, the words written by the original author are far outweighed
-          by the contributions of others. This observation is not intended to
+          by the contributions of others. I don't mean to 
           minimize the influence of the original author, but to draw attention
-          to the collaborative nature of this setting's development.
+          to the collaborative nature of this setting's development, that at least by wordcount,
+          is by and large done by others.
           <br />
         </p>
         <WordcountByAuthorGraph data={author_wordcount_data} />
         <p>
-          While it is true that works in the HDG setting are fanfiction, much of
-          the setting has been cooperatively developed by a group of authors,
-          rather than handed down by the original.
-          <br />
-          <br />
           Additionally, readers new to this space have not necessarily read the
           original work. Works often comment about whether they write with the
           intention of being intelligible to readers new to the setting.
@@ -143,9 +144,19 @@ export default function Hdg() {
           These recommendations were filtered to exclude self-promotion. In the
           case of multiple authors, only stories which none of the original
           authors wrote were counted. Using this, we can create a network of
-          between stories. The size of the nodes is determined by the number of
+          between stories. 
+          <br />
+          <br />
+          The size of the nodes is determined by the number of
           recommendations a story has recieved, regardless of whether that story
-          has been recommended. I encourage you to take a minute and click on
+          has been recommended.
+          <br />
+          <br /> 
+          To put it simply, a story is shown as a dot on the graph if at least one other
+          story recommends it. The size of the dot on the map is proportional to the number
+          of recommendations even if the story that recommended it is not on the map. 
+          
+          I encourage you to take a minute and click on
           the various nodes to explore.
         </p>
         <StoryNetwork data={network_data} />
@@ -175,32 +186,15 @@ export default function Hdg() {
           recommends much more liberally than the latter.
           <br />
         </p>
-        <h2 id="how-does-recommendations-stack-up-against-kudos">
-          How does recommendations stack up against Kudos?
-        </h2>
-        <p>
-          We could try to measure how accurate number of recommendations is as a
-          measure of community influence by comparing it to the number of kudos
-          a story gets. Because recommendations are much more difficult to give
-          than kudos, we would expect far fewer of them. However, by normalizing
-          them on a scale of 0 to 1 where 1 is the most kudos or recommendations
-          and zero is the least.
-          <br />
-          <br />
+        <h2>Conclusions</h2>
+        <p>The above graph will not tell you whether a work is or is not canon. It does however give a
+          sense of the influence of various authors and works within the world. Perhaps more interesting though,
+          is the way it gives insight into what is becoming cannon. Stories which are both new, and highly recommended
+          show signs of becoming cannon, as more and more authors read them, and the write works influenced by them.
         </p>
-        <NormalizedRecs data={normalized_recs} />   
-        <p>
-          <br />
-          Looking at the data, they’re correlated, with a mean
-          square error of 0.00106.
-        </p>
-        <h2 id="conclusion">Conclusion</h2>
-        <p>
-          In this article, we’ve created a novel metric for stories in the HDG
-          universe, and compared it to a known metric. We find that author
-          recommendations are a good measure for the influence of stories in the
-          HDG universe.
-          <br />
+        <p>HDG is a small, and beautiful little nook of the internet. Fundementally it is a group of writers collaborating in 
+          a shared setting to each create something larger than themselves. I hope that in some small way these visualizations
+          show just how unique and lovely a place it is. 
         </p>
       </div>
     </>

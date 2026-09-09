@@ -43,7 +43,7 @@ class WordcountByAuthorGraph extends React.Component{
             },
             title: {
                 text: 'Total wordcount per author',
-                subtext: 'GlitchyRobot marked in green',
+                subtext: 'GlitchyRobot (original author) marked in green',
                 zlevel: 5,
                 show:true
             },
