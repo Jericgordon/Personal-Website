@@ -124,6 +124,7 @@ class StoryNetwork extends React.Component {
             name: 'HDG',
             type: 'graph',
             layout: "none",
+            roam: true,
             data: this.props.data.nodes,
             links: this.getStyledLinks(this.links),
             edgeSymbol:(this.state.selectedNode == this.defaults.NODE_NOT_SELECTED)? 
