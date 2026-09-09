@@ -123,13 +123,12 @@ class StoryNetwork extends React.Component {
             name: 'HDG',
             type: 'graph',
             layout: "none",
-            roam: true,
             data: this.props.data.nodes,
             links: this.getStyledLinks(this.links),
             edgeSymbol:(this.state.selectedNode == this.defaults.NODE_NOT_SELECTED)? 
                 this.defaults.edgeSymbolUnselected : this.defaults.edgeSymbolSelected,
             animation: true,
-            roam:true,
+            roam:'scale',
             categories: this.years.map(year => ({
                 name: String(year)
                     })),
