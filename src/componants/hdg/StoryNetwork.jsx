@@ -98,14 +98,13 @@ class StoryNetwork extends React.Component {
     getOption = () => {
         const options =  {
             tooltip: {},
-            dataZoom: [
-            {
-                type: 'inside', // Enables touch gestures like pinch & pan on mobile
-                zoomOnMouseWheel: true,
-                moveOnMouseMove: true,
-                xAxisIndex: 0,   // Restrict gesture zooming to the X-axis only
-                preventDefaultMouseMove: true, // Prevents mobile web views from scrolling while dragging the graph
-            }],
+            // dataZoom: [
+            // {
+            //     type: 'inside', // Enables touch gestures like pinch & pan on mobile
+            //     zoomOnMouseWheel: true,
+            //     moveOnMouseMove: true,
+            //     xAxisIndex: 0,   // Restrict gesture zooming to the X-axis only
+            // }],
             color:["#103783", "#2C4F94", "#4867A5", "#637FB7", "#7F97C8", "#9BAFD9"],
             legend: [{
                 data: this.years,
