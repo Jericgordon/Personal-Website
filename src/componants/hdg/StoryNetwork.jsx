@@ -103,6 +103,7 @@ class StoryNetwork extends React.Component {
                 type: 'inside', // Enables touch gestures like pinch & pan on mobile
                 zoomOnMouseWheel: true,
                 moveOnMouseMove: true,
+                xAxisIndex: 0,   // Restrict gesture zooming to the X-axis only
                 preventDefaultMouseMove: true, // Prevents mobile web views from scrolling while dragging the graph
             }],
             color:["#103783", "#2C4F94", "#4867A5", "#637FB7", "#7F97C8", "#9BAFD9"],
