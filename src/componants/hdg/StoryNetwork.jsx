@@ -178,6 +178,7 @@ class StoryNetwork extends React.Component {
     render(){
         return (
         <ReactECharts
+            style={{touchAction:'none'}}
             //echarts={echarts}
             notMerge={false}
             // showLoading={isLoading}
